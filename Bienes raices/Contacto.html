@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blog</title>
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+        <title>Bienes raices</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap" rel="stylesheet">
+        <!--google fonts-->
+        <link rel="stylesheet" href="css/normalize.css">
+        <!--Elimina valores por defecto de navegadores y logra que todo se vea igual-->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+
+        <header class="encabezado">
+            <div class="contenedor estilo-header">
+                <div class="barra">
+                    <a href="/"><img src="img/logo.svg" alt="Logo"></a>
+                    <nav class="nav-a">
+                        <a href="Nosotros.html">Nosotros</a>
+                        <a href="Anuncios.html">Anuncios</a>
+                        <a href="Blog.html">Blog</a>
+                        <a href="Contacto.html">Contacto</a>
+                    </nav>
+                </div>
+                <!--barra-->
+            </div>
+            <!--contenedor-->
+        </header>
+        <!--encabezado inicio-->
+        <h1 class="fw-300 center-text">Contacto</h1>
+        <img src="img/destacada3.jpg" alt="Imagen Contacto">
+
+        <main class="contenedor seccion contenedor-800px seccion">
+            <h2 class="fw-300 center-text">Llena el Formulario</h2>
+            <form>
+                <fieldset>
+                    <legend>Información personal</legend>
+
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" required>
+
+                    <label for="email">E-Mail</label>
+                    <input type="email" id="email" required>
+
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" required>
+
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje"></textarea>
+                </fieldset>
+                <!--Informacion personal-->
+
+                <fieldset>
+                    <legend>Información sobre propiedad</legend>
+
+                    <label for="vende-compra">¿Vende o compra?</label>
+                    <select id="vende-compra" required>
+                        <option value="" diabled selected>--Seleccionar--</option>
+                        <option value="Compra">Compra</option>
+                        <option value="Vende">Vende</option>
+                    </select>
+
+                    <label for="cantidad">Cantidad</label>
+                    <input type="number" id="cantidad" min="0" step="5" required>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Contacto</legend>
+
+                    <p>¿Como desea ser contactado?</p>
+                    <div class="form-contacto">
+                        <label for="cel">Teléfono</label>
+                        <input type="radio" id="cel" value="cel" name="contacto">
+
+                        <label for="correo">E-Mail</label>
+                        <input type="radio" id="correo" value="correo" name="contacto">
+                    </div>
+
+                    <p>Si eligió teléfono, indique la fecha y la hora</p>
+
+                    <label for="fecha">Fecha:</label>
+                    <input type="date" id="fecha">
+
+                    <label for="hora">Hora:</label>
+                    <input type="time" id="hora">
+                </fieldset>
+                <input type="submit" value="Enviar" class="boton boton-verde">
+            </form>
+        </main>
+
+        <footer class="footer seccion">
+            <div class="contenedor contenedor-footer">
+                <nav class="nav-a">
+                    <a href="Nosotros.html">Nosotros</a>
+                    <a href="Anuncios.html">Anuncios</a>
+                    <a href="Blog.html">Blog</a>
+                    <a href="Contacto.html">Contacto</a>
+                </nav>
+                <p class="copyright">Todos Los Derechos Reservados &copy;</p>
+            </div>
+
+        </footer>
+
+    </body>
+
+    </html>
+</body>
+
+</html>

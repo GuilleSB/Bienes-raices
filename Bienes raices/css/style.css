@@ -1,0 +1,575 @@
+/*GLOBAL*/
+html{
+    box-sizing:border-box;
+    font-size: 62.5%; /*Para que 1rem = 10px*/
+}
+
+*, *:before, *:after{
+    box-sizing: inherit;
+}
+
+h1{
+    font-size: 3.8rem;
+}
+
+h2{
+    font-size: 3.4rem;
+
+}
+
+h3{
+    font-size: 3rem;
+
+}
+
+h4{
+    font-size: 2.8rem;
+
+}
+
+p{
+    margin-bottom:1.2rem!important;
+}
+
+p,
+a,
+blockquote,
+label,
+option,
+select,
+input,
+textarea{
+    font-size: 1.6rem;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    line-height: 3rem;
+}
+
+img{
+    max-width: 100%; /*img responsivas*/
+}
+
+label{
+    display: block;/*Para que abarquen todo el espacio*/
+}
+
+
+/*Estilos reutilizables*/
+
+.contenedor { 
+    max-width: 120rem;
+    margin: 0 auto;
+}
+@media (max-width:768px){
+    .contenedor {
+        max-width:95%;
+    
+    }
+}
+
+.seccion{
+    margin-top:4rem;
+    margin-bottom:4rem;
+}
+
+.contenedor-800px{
+    width:800px;
+}
+
+@media (max-width:768px){
+    .contenedor-800px{
+        max-width: 95%;
+    }
+}
+
+.fw-300{
+    font-weight:300;
+}
+
+.center-text{
+    text-align:center;
+}
+
+.d-block{
+    display:block!important;/*Se aplica por encima de otros display que choquen entre sí...*/
+}
+
+
+/*Botones*/
+.boton{
+    color:white;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.8rem;
+    padding: 1rem 3rem;
+    margin-top: 3rem;
+    display:inline-block;
+    text-align: center;
+    border:none;
+}
+
+.boton:hover{
+    cursor:pointer;
+}
+
+.boton-anaranjado{
+    background-color: orangered;
+}
+
+.boton-verde{
+    background: green;
+}
+
+
+
+
+/*HEADER*/
+
+.encabezado{
+    background-color:#333333;
+    padding: 1rem 0 3rem 0;
+}
+
+.encabezado.inicio{
+    background-image: url(../img/header.jpg);
+    background-position: center center; /*Centra horizontal y verticalmente*/
+    background-size: cover; /*Cubre con la imagen el espacio disponible*/
+    height: 100vh; /*Cubre el 100% de la pantalla*/
+    min-height: 60rem; /*Sin embargo, para no cortar tanto la imagen se le da una altura minima de 600px si el tamaño de la imagen es demasiado pequeño*/
+}
+
+@media (max-width:768px){
+    
+    .encabezado.inicio{
+        height: 100%;
+        min-height:20rem;
+
+    }
+
+    .estilo-header h1{
+        display: none;
+    }
+}
+
+
+.contenedor.estilo-header{
+    height: 100%; /*Abarca toda la altura de su padre, .contenedor*/
+    display:flex;
+    flex-direction: column; 
+    justify-content: space-between;
+}
+
+
+.contenedor h1{
+    max-width: 60rem; /*El h1 no puede pasar de 60rem, por lo que saltara a otro renglón... Muy util para no utilizar <br>*/
+    color:white;
+    line-height: 1.5; /*Espacio entre letras (arriba-abajo)*/
+}
+
+.barra{
+    display:flex;
+    justify-content: space-between; /*Alinea u ordena horizontalmente*/
+    align-items: center; /*Aliena u ordena verticalmente*/
+    padding-top:3rem;
+}
+
+.nav-a a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem;
+    margin-right:2rem;
+}
+
+@media (max-width:768px){
+    .barra{
+        padding-top:0rem;
+        flex-direction: column;
+    }
+    .barra nav a{
+        display:block;
+        margin:2.5rem 0;
+        font-size: 3rem;
+    }
+    .barra a:last-of-type{
+        margin-bottom:0;
+    }
+}
+
+
+.nav-a a:last-of-type{ /*Pseudoselector que ubica el ultimo elemento*/
+    margin: 0;
+}
+.nav-a a:hover{ 
+    color:orange;
+}
+
+
+
+
+
+/**/
+.iconos-cont{
+    display:flex;
+    justify-content: space-between; /*Flex basis SOLO funiona con justify-content*/
+}
+
+.icono{
+    flex-basis: calc(33.3% - 1rem); /*Forma de dar ancho en flex-box -> Se aplica en los hijos*/
+    text-align:center;
+}
+
+@media (max-width:768px){
+    .iconos-cont{
+        display:flex;
+
+        flex-direction: column;
+    }
+}
+
+
+
+
+
+
+/*Anuncios -> CARDS*/
+.contenedor-anuncios{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap:wrap; /*No permite que se pase del ancho del contenedor y salta de linea*/    
+}
+
+
+@media (max-width:768px){
+    .contenedor-anuncios{
+        flex-direction: column;
+    }
+}
+
+.anuncio{
+    
+    flex: 0 0 calc(33.3% - 1rem); /*0 NO Crece, 0 NO se encoje, calc Tamaño definido*/
+    border: 1px solid #b5b5b5;
+    background-color: #f5f5f5;
+    margin-top:2rem;
+
+}
+
+.texto-anuncio{
+    padding:3rem;
+}
+
+.texto-anuncio h4{
+    margin-bottom: 1.3rem!important;
+}
+
+.texto-anuncio h4,p{
+    margin:0;
+}
+
+.precio{
+    text-decoration:none;
+    font-weight: 700;
+    color:green;
+}
+
+.ver-todas{
+    display:flex;
+    justify-content: flex-end;
+    padding-bottom:1rem;
+}
+
+.contacto-imagen{
+    height:40rem;
+    background-image: url(../img/encuentra.jpg);
+    background-position: center center;
+    background-size: cover;
+    display:flex;
+    align-items:center;
+}
+
+.contenedor.contacto{
+    flex:1; /*divide el espacio disponible entre el numero provisto y lo asigna al div hijo.. En este caso es 1, por lo que
+    el div tomará todo el espacio...*/
+}
+
+.contenedor.contacto h2{
+    color:white;
+}
+
+.contenedor.contacto p{
+    font-size: 1.8rem;
+    color:white;
+}
+
+@media (max-width:768px){
+    .contacto div{
+        display:flex;
+        justify-content: center;
+    }
+
+
+}
+
+.lista-iconos{
+    list-style: none; /*Quita puntitos de las listas*/
+    padding:0; /*Eliminar padding*/
+    display:flex;
+    justify-content: space-evenly;
+    flex:1;
+    max-width:500px;
+}
+
+.lista-iconos li{
+    display:flex;
+}
+
+.lista-iconos li img{
+    margin-right:1.2rem;
+}
+
+
+
+
+/*ENTRADAS DE BLOG Y TESTIMONIALES*/
+.parte-inf{
+    display:flex;
+    justify-content: space-between;
+}
+@media (max-width:768px){
+    .parte-inf{
+        flex-wrap:wrap;
+    }
+}
+
+.blogs{
+    flex-basis: 60%;
+}
+
+.testimoniales{
+    flex-basis: calc(40% - 6rem);
+}
+
+@media (max-width:768px){
+    .testimoniales, .blogs{
+        flex: 0 0 100%;
+    }
+
+}
+
+.entrada{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.entrada:last-of-type{
+    margin-bottom: 0;
+}
+
+.img-entrada{
+    flex-basis: 40%;
+}
+
+.texto-entrada{
+    flex-basis: calc(60% - 2rem);
+}
+
+.texto-entrada h4{
+    margin:0;
+}
+
+.enlace-blog{
+    color:black;
+    text-decoration: none;
+}
+
+.texto-entrada h4::after{/*PSEUDOELEMENTO -> Agregar contenido o figuras despues de..*/
+    content:'';
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width:15rem;
+    height: 0.5rem;
+    background:green;
+}
+
+.texto-entrada p span{
+    color:orangered;
+}
+
+.testimonial {
+    background-color:green;
+    color:white;
+    border-radius: 1rem;
+    padding:2rem;
+}
+
+.testimonial p{
+    text-align: right;
+}
+
+.testimonial blockquote{
+    position:relative;
+    padding-left: 4rem;
+    font-weight: 300;
+}
+
+.testimonial blockquote::before{
+    content: '';
+    background-image: url(../img/comilla.svg);
+    width:4rem;
+    height: 4rem;
+    position:absolute;
+    left: -2rem;
+}
+
+
+
+/*FOOTER*/
+.footer{
+    margin-bottom: 0;
+    background: #333333;
+}
+
+.contenedor-footer{
+    padding:3rem 0;
+    display: flex;
+    justify-content: space-between
+}
+
+@media (max-width:768px){
+    .contenedor-footer{
+        padding:1.5rem 0;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-r{
+        display:none;
+    }
+
+}
+
+.copyright {
+    margin:0;
+    color:white;
+}
+
+@media (max-width:768px){
+    .copyright {
+        margin-top:2rem;
+        color:white;
+    }
+}
+
+
+/**Paginas internas**/
+/*Nosotros*/
+.contenedor-sobrenosotros{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-column-gap: 2rem;
+}
+
+@media (max-width:768px){
+    .contenedor-sobrenosotros{
+        display:flex;
+        flex-direction: column;
+    }
+}
+
+.sobrenosotros-texto blockquote{
+    font-weight: 900;
+    margin:0;
+    padding: 1rem 0 3rem 0;
+}
+
+
+/*anuncio.htm*/
+
+
+.encabezado-anuncio{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+@media (max-width:768px){
+    .encabezado-anuncio {
+        flex-direction: column;
+        align-items:flex-start;
+        
+    }
+
+    .encabezado-anuncio li p{
+        margin-right: 4rem;
+    }
+
+
+    
+}
+/*CONTACTO*/
+
+form p{
+    color:#585757;
+    margin: 1rem 0 0 0;
+}
+
+input:not([type="submit"]), textarea,select{
+    display:block;
+    width:100%;
+    padding:1rem;
+    background-color:#e1e1e1;
+    border-radius: 0.5rem;
+    border:none;
+    margin-bottom:2rem;
+}
+
+
+
+
+input[type="radio"]{
+    width:auto;/*Agarre el espacio que se acomode automaticamente*/
+    margin:0;
+}
+
+.form-contacto{
+    max-width: 30rem;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+
+legend{
+    font-size:2.4rem;
+    color:#333333;
+    margin-bottom:2rem;
+}
+
+label{
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+
+textarea {
+    height:20rem;
+}
+
+select{
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+fieldset{
+    margin-bottom: 2rem;
+}
+fieldset:last-of-type{
+    margin-bottom: 0;
+}
